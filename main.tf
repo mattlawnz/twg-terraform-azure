@@ -32,3 +32,7 @@ resource "azurerm_resource_group" "rg" {
   tags     = module.rg_aks_label.tags
   location = "westus2"
 }
+
+output "rg_deeplink" {
+  value = "https://portal.azure.com/#resource/subscriptions/${var.azure_env.subscription_id}/resourceGroups/${module.rg_aks_label.id}"
+}
